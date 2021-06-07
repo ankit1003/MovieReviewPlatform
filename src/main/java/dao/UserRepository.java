@@ -1,8 +1,6 @@
 package dao;
 
-import bean.Movie;
-import bean.Review;
-import bean.User;
+import model.User;
 
 import java.util.ArrayList;
 import java.util.HashMap;

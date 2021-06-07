@@ -1,11 +1,12 @@
 package service;
 
-import bean.Review;
-import bean.User;
+import dao.UserDaoInterface;
+import model.Review;
+import model.User;
 import dao.UserDao;
 
-public class UserOperation {
-    UserDao userDao = new UserDao();
+public class UserOperation implements UserOperationInterface{
+    UserDaoInterface userDao = new UserDao();
     public void addUser(User user){
         userDao.addUser(user);
     }

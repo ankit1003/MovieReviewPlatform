@@ -1,11 +1,12 @@
 package service;
 
-import bean.Review;
+import dao.ReviewDaoInterface;
+import model.Review;
 import dao.ReviewDao;
 
-public class ReviewOperation {
+public class ReviewOperation implements ReviewOperationInterface{
 
-    ReviewDao reviewDao = new ReviewDao();
+    ReviewDaoInterface reviewDao = new ReviewDao();
     public void postReview(Review review){
         reviewDao.postReview(review);
     }

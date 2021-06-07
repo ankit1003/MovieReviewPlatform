@@ -1,36 +1,50 @@
 constants/ViewerCategory.java
  constants.ViewerCategory
-client/MovieAPI.java
- client.MovieAPI
-bean/Review.java
- bean.Review
-bean/User.java
- bean.User
-bean/Movie.java
- bean.Movie
+constants/Genre.java
+ constants.Genre
+dao/UserDaoInterface.java
+ dao.UserDaoInterface
+service/ReviewOperationInterface.java
+ service.ReviewOperationInterface
+resource/MovieAPI.java
+ resource.MovieAPI
 service/MovieOperation.java
  service.MovieOperation
 dao/MovieRepository.java
  dao.MovieRepository
+config/ApplicationConfig.java
+ config.ApplicationConfig
 service/UserOperation.java
  service.UserOperation
 service/MovieReviewOperator.java
  service.MovieReviewOperator
-service/ReviewOperation.java
- service.ReviewOperation
-constants/Genre.java
- constants.Genre
-dao/MovieDao.java
- dao.MovieDao
-dao/ReviewDao.java
- dao.ReviewDao
-dao/UserRepository.java
- dao.UserRepository
-dao/UserDao.java
- dao.UserDao
 App.java
  App
-client/ApplicationConfig.java
- client.ApplicationConfig
-client/UserAPI.java
- client.UserAPI
+service/UserOperationInterface.java
+ service.UserOperationInterface
+service/MovieOperationInterface.java
+ service.MovieOperationInterface
+dao/ReviewDaoInterface.java
+ dao.ReviewDaoInterface
+dao/MovieDao.java
+ dao.MovieDao
+model/User.java
+ model.User
+dao/ReviewDao.java
+ dao.ReviewDao
+resource/UserAPI.java
+ resource.UserAPI
+model/Movie.java
+ model.Movie
+dao/MovieDaoInterface.java
+ dao.MovieDaoInterface
+dao/UserDao.java
+ dao.UserDao
+dao/UserRepository.java
+ dao.UserRepository
+resource/ReviewAPI.java
+ resource.ReviewAPI
+service/ReviewOperation.java
+ service.ReviewOperation
+model/Review.java
+ model.Review

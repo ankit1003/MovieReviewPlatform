@@ -1,15 +1,12 @@
 package service;
 
-import bean.Movie;
-import bean.Review;
+import dao.MovieDaoInterface;
+import model.Movie;
+import model.Review;
 import dao.MovieDao;
 
-import javax.persistence.EntityManager;
-import javax.persistence.EntityManagerFactory;
-import javax.persistence.Persistence;
-
-public class MovieOperation {
-    MovieDao movieDao = new MovieDao();
+public class MovieOperation  implements MovieOperationInterface{
+    MovieDaoInterface movieDao = new MovieDao();
 
     public  void addMovie(Movie movie) {
         movieDao.addMovie(movie);

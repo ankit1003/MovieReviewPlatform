@@ -1,5 +1,6 @@
-import client.MovieAPI;
-import client.UserAPI;
+import resource.MovieAPI;
+import resource.ReviewAPI;
+import resource.UserAPI;
 import io.dropwizard.Application;
 import io.dropwizard.Configuration;
 import io.dropwizard.setup.Bootstrap;
@@ -17,6 +18,7 @@ public class App extends Application<Configuration> {
 //        e.jersey().register(new MyProgram());
         e.jersey().register(new MovieAPI());
         e.jersey().register(new UserAPI());
+        e.jersey().register(new ReviewAPI());
 
     }
 

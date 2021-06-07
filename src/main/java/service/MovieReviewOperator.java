@@ -1,8 +1,6 @@
 package service;
 
-import bean.Movie;
 import dao.MovieRepository;
-import bean.User;
 import dao.UserRepository;
 import constants.Genre;
 

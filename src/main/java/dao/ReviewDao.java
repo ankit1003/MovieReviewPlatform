@@ -1,14 +1,14 @@
 package dao;
 
-import bean.Movie;
-import bean.Review;
-import bean.User;
+import model.Movie;
+import model.Review;
+import model.User;
 
 import javax.persistence.EntityManager;
 import javax.persistence.EntityManagerFactory;
 import javax.persistence.Persistence;
 
-public class ReviewDao {
+public class ReviewDao implements ReviewDaoInterface{
     EntityManagerFactory entityManagerFactory = Persistence.createEntityManagerFactory("pu");
 
     public void postReview(Review review){
