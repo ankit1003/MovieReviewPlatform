@@ -2,6 +2,12 @@ constants/ViewerCategory.java
  constants.ViewerCategory
 constants/Genre.java
  constants.Genre
+exception/UserNotFoundException.java
+ exception.UserNotFoundException
+exception/ReviewNotFoundException.java
+ exception.ReviewNotFoundException
+exception/MovieNotFoundException.java
+ exception.MovieNotFoundException
 dao/UserDaoInterface.java
  dao.UserDaoInterface
 service/ReviewOperationInterface.java
@@ -12,14 +18,14 @@ service/MovieOperation.java
  service.MovieOperation
 dao/MovieRepository.java
  dao.MovieRepository
-config/ApplicationConfig.java
- config.ApplicationConfig
+service/ReviewOperation.java
+ service.ReviewOperation
 service/UserOperation.java
  service.UserOperation
 service/MovieReviewOperator.java
  service.MovieReviewOperator
-App.java
- App
+model/Review.java
+ model.Review
 service/UserOperationInterface.java
  service.UserOperationInterface
 service/MovieOperationInterface.java
@@ -42,9 +48,9 @@ dao/UserDao.java
  dao.UserDao
 dao/UserRepository.java
  dao.UserRepository
+App.java
+ App
 resource/ReviewAPI.java
  resource.ReviewAPI
-service/ReviewOperation.java
- service.ReviewOperation
-model/Review.java
- model.Review
+config/ApplicationConfig.java
+ config.ApplicationConfig

@@ -7,15 +7,30 @@ import java.util.HashSet;
 import java.util.Set;
 
 @Entity
+@NamedNativeQuery(
+        name = "viewReviews",
+        query = "select reviewSet_reviewId" +" from user_review" + " where User_userId = ?",
+        resultClass=Review.class
+)
 public class User {
 
-    @Id
+    @Id @GeneratedValue
+    int userId;
+
+    public int getUserId() {
+        return userId;
+    }
+
+    public void setUserId(int userId) {
+        this.userId = userId;
+    }
+
     private String name;
 
     @Enumerated(EnumType.STRING)
     private  ViewerCategory viewerCategory;
 
-    @OneToMany //(cascade = CascadeType.ALL)
+    @OneToMany (cascade = CascadeType.ALL)
     private Set<Review> reviewsSet = new HashSet<Review>();
 
     private int numberOfReview;
@@ -55,7 +70,6 @@ public class User {
         this.numberOfReview = numberOfReview;
     }
 
-
     public User(String name) {
         this.name = name;
         this.viewerCategory = ViewerCategory.VIEWER;
@@ -72,6 +86,11 @@ public class User {
         if(numberOfReview >= minNumReviewsRequiredForCritic) {
             this.viewerCategory = ViewerCategory.CRITIC;
         }
+    }
+
+    public void deleteReview(Review review) {
+        reviewsSet.remove(review);
+        numberOfReview--;
     }
 //
 //    public void deleteReview(String name) {

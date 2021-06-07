@@ -8,12 +8,22 @@ import java.util.*;
 @Entity
 public class Movie {
 
-    @Id
+    @Id @GeneratedValue
+    int movieId;
+
+    public int getMovieId() {
+        return movieId;
+    }
+
+    public void setMovieId(int movieId) {
+        this.movieId = movieId;
+    }
+
     private String name;
 
     private Date releaseYear;
 
-    @OneToMany //(cascade = CascadeType.ALL)
+    @OneToMany (cascade = CascadeType.ALL)
     private Set<Review> reviewsSet = new HashSet<Review>();
 
 
@@ -65,9 +75,10 @@ public class Movie {
         reviewsSet.add(review);
     }
 
-//    public void deleteReview(String userName) {
-//        reviewsMap.remove(userName);
-//    }
+    public void deleteReview(Review review) {
+        reviewsSet.remove(review);
+    }
+
 //
 //    public double computeRating() {
 //        List<Review> reviewList = new ArrayList<>( reviewsMap.values());
