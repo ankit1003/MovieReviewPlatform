@@ -1,0 +1,5 @@
+server:
+  applicationContextPath: /fkms
+  applicationConnectors:
+    - type: http
+      port: 8085

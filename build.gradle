@@ -16,6 +16,11 @@ dependencies {
     implementation group: 'org.hibernate', name: 'hibernate-core', version: '5.4.32.Final'
     // https://mvnrepository.com/artifact/mysql/mysql-connector-java
     implementation group: 'mysql', name: 'mysql-connector-java', version: '5.1.47'
+    // https://mvnrepository.com/artifact/io.dropwizard/dropwizard-core
+    implementation group: 'io.dropwizard', name: 'dropwizard-core', version: '2.0.22'
+    // https://mvnrepository.com/artifact/org.apache.maven.plugins/maven-jar-plugin
+//    implementation group: 'org.apache.maven.plugins', name: 'maven-jar-plugin', version: '3.2.0'
+
 
 }
 

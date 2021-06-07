@@ -17,10 +17,14 @@ public class ReviewDao {
         entityManager.persist(review);
 //        review.getMovie().addReview(review);
 //        review.getUser().addReview(review);
-//        review = ((Review)entityManager.find(Review.class,review));
-//        User user = ((Review) entityManager.find(Review.class,review)).getUser();
-//        review.getMovie().addReview(review);
-//        review.getUser().addReview(review);
+//        review =(Review) entityManager.find(Review.class,review.getReviewId());
+        User user = (User) entityManager.find(User.class,review.getUser().getName());
+        Movie movie = (Movie) entityManager.find(Movie.class, review.getMovie().getName());
+//        Movie movie = review.getMovie();
+        movie.addReview(review);
+        user.addReview(review);
+//        entityManager.merge(movie);
+//        entityManager.merge(user);
         entityManager.getTransaction().commit();
         entityManager.close();
     }
