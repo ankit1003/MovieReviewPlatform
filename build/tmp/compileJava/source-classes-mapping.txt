@@ -1,0 +1,30 @@
+constants/ViewerCategory.java
+ constants.ViewerCategory
+constants/Genre.java
+ constants.Genre
+client/MyProgram.java
+ client.MyProgram
+bean/Review.java
+ bean.Review
+bean/User.java
+ bean.User
+bean/Movie.java
+ bean.Movie
+dao/MovieRepository.java
+ dao.MovieRepository
+dao/UserRepository.java
+ dao.UserRepository
+service/MovieReviewOperator.java
+ service.MovieReviewOperator
+service/UserOperation.java
+ service.UserOperation
+service/MovieOperation.java
+ service.MovieOperation
+dao/MovieDao.java
+ dao.MovieDao
+dao/ReviewDao.java
+ dao.ReviewDao
+dao/UserDao.java
+ dao.UserDao
+service/ReviewOperation.java
+ service.ReviewOperation
