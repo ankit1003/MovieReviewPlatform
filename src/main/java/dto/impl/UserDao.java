@@ -3,6 +3,8 @@ package dto.impl;
 import dto.ReviewDaoInterface;
 import dto.UserDaoInterface;
 import dto.impl.ReviewDao;
+import exception.MovieNotFoundException;
+import exception.ReviewNotAddedException;
 import exception.UserNotFoundException;
 import model.Review;
 import model.User;
@@ -22,7 +24,7 @@ public class UserDao implements UserDaoInterface {
         entityManager.close();
     }
 
-    public void postReview(Review review){
+    public void postReview(Review review) throws UserNotFoundException, MovieNotFoundException {
         reviewDao.postReview(review);
     }
 
@@ -48,7 +50,7 @@ public class UserDao implements UserDaoInterface {
     }
 
 
-    public Map viewReviews(int userId) throws UserNotFoundException{
+    public Map viewReviews(int userId) throws UserNotFoundException, ReviewNotAddedException {
         EntityManager entityManager = entityManagerFactory.createEntityManager();
         entityManager.getTransaction().begin();
         User user = entityManager.find(User.class,userId);
@@ -58,6 +60,9 @@ public class UserDao implements UserDaoInterface {
             Map<Integer,Integer> map = new HashMap<Integer, Integer>();
             for (Review review: user.getReviewsSet()){
                 map.put(review.getMovie().getMovieId(), review.getRating());
+            }
+            if(map.isEmpty()){
+                throw new ReviewNotAddedException();
             }
             return map;
         }

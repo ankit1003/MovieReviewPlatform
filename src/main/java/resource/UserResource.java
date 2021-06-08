@@ -1,6 +1,8 @@
 package resource;
 
+import exception.ReviewNotAddedException;
 import exception.UserNotFoundException;
+import model.Review;
 import model.User;
 import service.impl.UserOperation;
 
@@ -33,23 +35,17 @@ public class UserResource {
     @GET
     @Path("/viewUser")
     @Produces(MediaType.APPLICATION_JSON)
-    public String viewUser(@QueryParam("userId") int userId){
-        try {
-            return userOperation.viewUser(userId).getName();
-        } catch (UserNotFoundException e) {
-            return e.getMessage();
-        }
+    public Response viewUser(@QueryParam("userId") int userId) throws UserNotFoundException {
+            User user = userOperation.viewUser(userId);
+            return Response.ok(user.getName()).build();
     }
 
 
     @GET
     @Path("/viewReviews")
     @Produces(MediaType.APPLICATION_JSON)
-    public Map viewReviews(@QueryParam("userId") int userId){
-        try {
-            return userOperation.viewReviews(userId);
-        } catch (UserNotFoundException e) {
-            return null;
-        }
+    public Response viewReviews(@QueryParam("userId") int userId) throws UserNotFoundException, ReviewNotAddedException {
+        Map map = userOperation.viewReviews(userId);
+            return Response.ok(map).build();
     }
 }

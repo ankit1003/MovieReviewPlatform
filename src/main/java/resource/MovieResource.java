@@ -2,6 +2,7 @@ package resource;
 
 
 import exception.MovieNotFoundException;
+import exception.ReviewNotAddedException;
 import model.Movie;
 import service.impl.MovieOperation;
 
@@ -34,21 +35,18 @@ public class MovieResource {
     @GET
     @Path("/viewMovie")
     @Produces(MediaType.APPLICATION_JSON)
-    public String viewUser(@QueryParam("movieId") int movieId){
-        try {
-            return movieOperation.viewMovie(movieId).getName();
-        } catch (MovieNotFoundException e) {
-            return e.getMessage();
-        }
+    public Response viewUser(@QueryParam("movieId") int movieId) throws MovieNotFoundException {
+            return Response.ok(movieOperation.viewMovie(movieId).getName()).build();
     }
 
     @GET
     @Path("/viewReviews")
     @Produces(MediaType.APPLICATION_JSON)
-    public Response viewReviews(@QueryParam("movieId") int movieId) throws MovieNotFoundException
-    {
-            return Response.ok(movieOperation.viewReviews(movieId)).build();
-//            throw new MovieNotFoundException ();
+    public Response viewReviews(@QueryParam("movieId") int movieId) throws MovieNotFoundException, ReviewNotAddedException {
+            Map map =movieOperation.viewReviews(movieId);
+
+//            throw new MovieNotFoundException();
+            return Response.ok(map).build();
     }
 
 

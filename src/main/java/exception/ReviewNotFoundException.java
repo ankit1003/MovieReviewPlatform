@@ -11,18 +11,18 @@ public class ReviewNotFoundException extends Exception implements
 {
 
 
-    public ReviewNotFoundException() {
-        super("No Review found with given id !!");
-    }
-
-    public ReviewNotFoundException(String string) {
-        super(string);
-    }
+//    public ReviewNotFoundException() {
+//        super("No Review found with given id !!");
+//    }
+//
+//    public ReviewNotFoundException(String string) {
+//        super(string);
+//    }
 
     @Override
     public Response toResponse(ReviewNotFoundException exception)
     {
-        CustomExceptionResponse customExceptionResponse = new CustomExceptionResponse(404,"Exception in get movie","author not valid");
+        CustomExceptionResponse customExceptionResponse = new CustomExceptionResponse(404,"Exception in get review","ReviewId not valid");
         return Response.status(404).entity(customExceptionResponse)
                 .type(MediaType.APPLICATION_JSON).build();
 

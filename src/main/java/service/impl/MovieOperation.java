@@ -2,6 +2,8 @@ package service.impl;
 
 import dto.MovieDaoInterface;
 import exception.MovieNotFoundException;
+import exception.ReviewNotAddedException;
+import exception.UserNotFoundException;
 import model.Movie;
 import model.Review;
 import dto.impl.MovieDao;
@@ -19,7 +21,7 @@ public class MovieOperation  implements MovieOperationInterface {
     }
 
     @Override
-    public void postReview(Review review) {
+    public void postReview(Review review) throws UserNotFoundException, MovieNotFoundException {
         movieDao.postReview(review);
     }
 
@@ -39,7 +41,7 @@ public class MovieOperation  implements MovieOperationInterface {
     }
 
     @Override
-    public Map viewReviews(int movieId) throws MovieNotFoundException {
+    public Map viewReviews(int movieId) throws MovieNotFoundException, ReviewNotAddedException {
         return movieDao.viewReviews(movieId);
     }
 

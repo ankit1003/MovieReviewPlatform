@@ -1,3 +1,7 @@
+import exception.MovieNotFoundException;
+import exception.ReviewNotAddedException;
+import exception.ReviewNotFoundException;
+import exception.UserNotFoundException;
 import resource.MovieResource;
 import resource.ReviewResource;
 import resource.UserResource;
@@ -19,6 +23,10 @@ public class App extends Application<Configuration> {
         e.jersey().register(new MovieResource());
         e.jersey().register(new UserResource());
         e.jersey().register(new ReviewResource());
+        e.jersey().register(new MovieNotFoundException());
+        e.jersey().register(new ReviewNotFoundException());
+        e.jersey().register(new UserNotFoundException());
+        e.jersey().register(new ReviewNotAddedException());
 
     }
 

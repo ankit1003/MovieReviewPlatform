@@ -11,18 +11,18 @@ public class UserNotFoundException extends Exception implements
 {
 
 
-    public UserNotFoundException() {
-        super("No User given with given id !!");
-    }
-
-    public UserNotFoundException(String string) {
-        super(string);
-    }
+//    public UserNotFoundException() {
+//        super("No User given with given id !!");
+//    }
+//
+//    public UserNotFoundException(String string) {
+//        super(string);
+//    }
 
     @Override
     public Response toResponse(UserNotFoundException exception)
     {
-        CustomExceptionResponse customExceptionResponse = new CustomExceptionResponse(404,"Exception in get User","author not valid");
+        CustomExceptionResponse customExceptionResponse = new CustomExceptionResponse(404,"Exception in get User","User not valid");
         return Response.status(404).entity(customExceptionResponse)
                 .type(MediaType.APPLICATION_JSON).build();
 
