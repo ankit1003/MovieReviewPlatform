@@ -1,17 +1,17 @@
 package config;
 
-import resource.MovieAPI;
-import resource.ReviewAPI;
-import resource.UserAPI;
+import resource.MovieResource;
+import resource.ReviewResource;
+import resource.UserResource;
 import org.glassfish.jersey.server.ResourceConfig;
 
 public class ApplicationConfig extends ResourceConfig {
 
     public ApplicationConfig() {
 
-        register(MovieAPI.class);
-        register(UserAPI.class);
-        register(ReviewAPI.class);
+        register(MovieResource.class);
+        register(UserResource.class);
+        register(ReviewResource.class);
 
     }
 

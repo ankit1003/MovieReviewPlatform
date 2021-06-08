@@ -1,6 +1,6 @@
-import resource.MovieAPI;
-import resource.ReviewAPI;
-import resource.UserAPI;
+import resource.MovieResource;
+import resource.ReviewResource;
+import resource.UserResource;
 import io.dropwizard.Application;
 import io.dropwizard.Configuration;
 import io.dropwizard.setup.Bootstrap;
@@ -16,9 +16,9 @@ public class App extends Application<Configuration> {
 
         //registering all the RESTful service classes.
 //        e.jersey().register(new MyProgram());
-        e.jersey().register(new MovieAPI());
-        e.jersey().register(new UserAPI());
-        e.jersey().register(new ReviewAPI());
+        e.jersey().register(new MovieResource());
+        e.jersey().register(new UserResource());
+        e.jersey().register(new ReviewResource());
 
     }
 

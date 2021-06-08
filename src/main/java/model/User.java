@@ -6,6 +6,8 @@ import javax.persistence.*;
 import java.util.HashSet;
 import java.util.Set;
 
+import static constants.ViewerCategory.CRITIC;
+
 @Entity
 @NamedNativeQuery(
         name = "viewReviews",
@@ -72,7 +74,7 @@ public class User {
 
     public User(String name) {
         this.name = name;
-        this.viewerCategory = ViewerCategory.VIEWER;
+        viewerCategory = ViewerCategory.VIEWER;
         numberOfReview = 0;
         this.reviewsSet = reviewsSet;
     }
@@ -84,7 +86,7 @@ public class User {
         reviewsSet.add(review);
         numberOfReview++;
         if(numberOfReview >= minNumReviewsRequiredForCritic) {
-            this.viewerCategory = ViewerCategory.CRITIC;
+            this.viewerCategory = CRITIC;
         }
     }
 

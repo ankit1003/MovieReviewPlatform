@@ -1,56 +1,52 @@
-constants/ViewerCategory.java
- constants.ViewerCategory
-constants/Genre.java
- constants.Genre
-exception/UserNotFoundException.java
- exception.UserNotFoundException
-exception/ReviewNotFoundException.java
- exception.ReviewNotFoundException
-exception/MovieNotFoundException.java
- exception.MovieNotFoundException
-dao/UserDaoInterface.java
- dao.UserDaoInterface
+dto/impl/MovieDao.java
+ dto.impl.MovieDao
+dto/ReviewDaoInterface.java
+ dto.ReviewDaoInterface
 service/ReviewOperationInterface.java
  service.ReviewOperationInterface
-resource/MovieAPI.java
- resource.MovieAPI
-service/MovieOperation.java
- service.MovieOperation
-dao/MovieRepository.java
- dao.MovieRepository
-service/ReviewOperation.java
- service.ReviewOperation
-service/UserOperation.java
- service.UserOperation
-service/MovieReviewOperator.java
- service.MovieReviewOperator
-model/Review.java
- model.Review
-service/UserOperationInterface.java
- service.UserOperationInterface
-service/MovieOperationInterface.java
- service.MovieOperationInterface
-dao/ReviewDaoInterface.java
- dao.ReviewDaoInterface
-dao/MovieDao.java
- dao.MovieDao
-model/User.java
- model.User
-dao/ReviewDao.java
- dao.ReviewDao
-resource/UserAPI.java
- resource.UserAPI
-model/Movie.java
- model.Movie
-dao/MovieDaoInterface.java
- dao.MovieDaoInterface
-dao/UserDao.java
- dao.UserDao
-dao/UserRepository.java
- dao.UserRepository
-App.java
- App
-resource/ReviewAPI.java
- resource.ReviewAPI
+resource/ReviewResource.java
+ resource.ReviewResource
 config/ApplicationConfig.java
  config.ApplicationConfig
+dto/UserDaoInterface.java
+ dto.UserDaoInterface
+service/impl/ReviewOperation.java
+ service.impl.ReviewOperation
+App.java
+ App
+service/UserOperationInterface.java
+ service.UserOperationInterface
+constants/Genre.java
+ constants.Genre
+service/MovieOperationInterface.java
+ service.MovieOperationInterface
+model/User.java
+ model.User
+dto/impl/UserDao.java
+ dto.impl.UserDao
+exception/MovieNotFoundException.java
+ exception.MovieNotFoundException
+model/Review.java
+ model.Review
+exception/UserNotFoundException.java
+ exception.UserNotFoundException
+constants/ViewerCategory.java
+ constants.ViewerCategory
+service/impl/MovieOperation.java
+ service.impl.MovieOperation
+service/impl/UserOperation.java
+ service.impl.UserOperation
+exception/CustomExceptionResponse.java
+ exception.CustomExceptionResponse
+resource/MovieResource.java
+ resource.MovieResource
+model/Movie.java
+ model.Movie
+exception/ReviewNotFoundException.java
+ exception.ReviewNotFoundException
+resource/UserResource.java
+ resource.UserResource
+dto/impl/ReviewDao.java
+ dto.impl.ReviewDao
+dto/MovieDaoInterface.java
+ dto.MovieDaoInterface

@@ -1,19 +1,31 @@
 package exception;
 
-public class ReviewNotFoundException extends Exception{
-    private int reviewId;
+import javax.ws.rs.core.MediaType;
+import javax.ws.rs.core.Response;
+import javax.ws.rs.ext.ExceptionMapper;
+import javax.ws.rs.ext.Provider;
 
-    public ReviewNotFoundException(int reviewId) {
-        this.reviewId = reviewId;
-    }
+@Provider
+public class ReviewNotFoundException extends Exception implements
+        ExceptionMapper<ReviewNotFoundException>
+{
+
 
     public ReviewNotFoundException() {
-    }
-    public int getReviewId() {
-        return reviewId;
+        super("No Review found with given id !!");
     }
 
-    public String getMessage(){
-        return "Review with reviewId " + reviewId + " not found.";
+    public ReviewNotFoundException(String string) {
+        super(string);
     }
+
+    @Override
+    public Response toResponse(ReviewNotFoundException exception)
+    {
+        CustomExceptionResponse customExceptionResponse = new CustomExceptionResponse(404,"Exception in get movie","author not valid");
+        return Response.status(404).entity(customExceptionResponse)
+                .type(MediaType.APPLICATION_JSON).build();
+
+    }
+
 }
