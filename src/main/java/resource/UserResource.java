@@ -4,6 +4,7 @@ import exception.ReviewNotAddedException;
 import exception.UserNotFoundException;
 import model.Review;
 import model.User;
+import response.UserResponse;
 import service.impl.UserOperation;
 
 import javax.ws.rs.*;
@@ -37,7 +38,11 @@ public class UserResource {
     @Produces(MediaType.APPLICATION_JSON)
     public Response viewUser(@QueryParam("userId") int userId) throws UserNotFoundException {
             User user = userOperation.viewUser(userId);
-            return Response.ok(user.getName()).build();
+            UserResponse userResponse = new UserResponse();
+            userResponse.setName(user.getName());
+            userResponse.setNumberOfReviews(user.getNumberOfReview());
+            userResponse.setViewerCategory(user.getViewerCategory());
+            return Response.ok(userResponse).build();
     }
 
 

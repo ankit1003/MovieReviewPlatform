@@ -4,6 +4,7 @@ package resource;
 import exception.MovieNotFoundException;
 import exception.ReviewNotAddedException;
 import model.Movie;
+import response.MovieResponse;
 import service.impl.MovieOperation;
 
 import javax.ws.rs.*;
@@ -36,7 +37,12 @@ public class MovieResource {
     @Path("/viewMovie")
     @Produces(MediaType.APPLICATION_JSON)
     public Response viewUser(@QueryParam("movieId") int movieId) throws MovieNotFoundException {
-            return Response.ok(movieOperation.viewMovie(movieId).getName()).build();
+        Movie movie = movieOperation.viewMovie(movieId);
+        MovieResponse movieResponse = new MovieResponse();
+        movieResponse.setName(movie.getName());
+        movieResponse.setGenres(movie.getGenres());
+//        movieResponse.setReleaseYear(movie.getReleaseYear());
+        return Response.ok(movieResponse).build();
     }
 
     @GET

@@ -7,6 +7,6 @@ import model.Review;
 
 public interface ReviewOperationInterface {
     void postReview(Review review) throws UserNotFoundException, MovieNotFoundException;
-    int viewReview(int userId,int movieId) throws ReviewNotFoundException, UserNotFoundException, MovieNotFoundException;
+    Review viewReview(int userId,int movieId) throws ReviewNotFoundException, UserNotFoundException, MovieNotFoundException;
     void deleteReview(int reviewId) throws ReviewNotFoundException;
 }

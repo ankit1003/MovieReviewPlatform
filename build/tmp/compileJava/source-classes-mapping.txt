@@ -6,49 +6,55 @@ exception/ReviewNotAddedException.java
  exception.ReviewNotAddedException
 exception/MovieNotFoundException.java
  exception.MovieNotFoundException
-resource/UserResource.java
- resource.UserResource
+exception/ReviewNotFoundException.java
+ exception.ReviewNotFoundException
 exception/UserNotFoundException.java
  exception.UserNotFoundException
 exception/CustomExceptionResponse.java
  exception.CustomExceptionResponse
 dto/MovieDaoInterface.java
  dto.MovieDaoInterface
-exception/ReviewNotFoundException.java
- exception.ReviewNotFoundException
-service/impl/MovieOperation.java
- service.impl.MovieOperation
-dto/impl/MovieDao.java
- dto.impl.MovieDao
-dto/ReviewDaoInterface.java
- dto.ReviewDaoInterface
-service/impl/UserOperation.java
- service.impl.UserOperation
-service/ReviewOperationInterface.java
- service.ReviewOperationInterface
+model/Movie.java
+ model.Movie
+response/UserResponse.java
+ response.UserResponse
+response/MovieResponse.java
+ response.MovieResponse
+config/ApplicationConfig.java
+ config.ApplicationConfig
 resource/MovieResource.java
  resource.MovieResource
+model/Review.java
+ model.Review
+resource/UserResource.java
+ resource.UserResource
 dto/UserDaoInterface.java
  dto.UserDaoInterface
-service/impl/ReviewOperation.java
- service.impl.ReviewOperation
+model/User.java
+ model.User
 service/UserOperationInterface.java
  service.UserOperationInterface
 service/MovieOperationInterface.java
  service.MovieOperationInterface
-model/User.java
- model.User
-dto/impl/ReviewDao.java
- dto.impl.ReviewDao
-model/Movie.java
- model.Movie
-dto/impl/UserDao.java
- dto.impl.UserDao
-model/Review.java
- model.Review
+response/ReviewResponse.java
+ response.ReviewResponse
 App.java
  App
+service/impl/ReviewOperation.java
+ service.impl.ReviewOperation
+dto/impl/ReviewDao.java
+ dto.impl.ReviewDao
 resource/ReviewResource.java
  resource.ReviewResource
-config/ApplicationConfig.java
- config.ApplicationConfig
+dto/ReviewDaoInterface.java
+ dto.ReviewDaoInterface
+service/ReviewOperationInterface.java
+ service.ReviewOperationInterface
+service/impl/MovieOperation.java
+ service.impl.MovieOperation
+dto/impl/MovieDao.java
+ dto.impl.MovieDao
+service/impl/UserOperation.java
+ service.impl.UserOperation
+dto/impl/UserDao.java
+ dto.impl.UserDao

@@ -44,7 +44,7 @@ public class MovieDao implements MovieDaoInterface {
     public List viewMovies(){
         EntityManager entityManager = entityManagerFactory.createEntityManager();
         entityManager.getTransaction().begin();
-        Query query = entityManager.createQuery("select movieId,name from Movie");
+        Query query = entityManager.createQuery("select name from Movie");
         List movies = query.getResultList();
         return movies;
     }
@@ -68,9 +68,9 @@ public class MovieDao implements MovieDaoInterface {
         Movie movie = entityManager.find(Movie.class,movieId);
         if(movie==null)
             throw new MovieNotFoundException();
-        Map<Integer,Integer> map = new HashMap<Integer, Integer>();
+        Map<String,Integer> map = new HashMap<String, Integer>();
         for (Review review: movie.getReviewsSet()) {
-            map.put(review.getUser().getUserId(), review.getRating());
+            map.put(review.getUser().getName(), review.getRating());
         }
         if(map.isEmpty())
             throw new ReviewNotAddedException();

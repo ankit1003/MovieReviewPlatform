@@ -19,7 +19,7 @@ public class ReviewOperation implements ReviewOperationInterface {
     }
 
     @Override
-    public int viewReview(int userId, int movieId) throws ReviewNotFoundException, UserNotFoundException, MovieNotFoundException {
+    public Review viewReview(int userId, int movieId) throws ReviewNotFoundException, UserNotFoundException, MovieNotFoundException {
         return reviewDao.viewReview(userId,movieId);
     }
 

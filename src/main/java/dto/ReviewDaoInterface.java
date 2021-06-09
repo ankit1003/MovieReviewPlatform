@@ -7,6 +7,6 @@ import model.Review;
 
 public interface ReviewDaoInterface {
     void postReview(Review review) throws UserNotFoundException, MovieNotFoundException;
-    int viewReview(int userId,int movieId) throws ReviewNotFoundException, MovieNotFoundException, UserNotFoundException;
+    Review viewReview(int userId, int movieId) throws ReviewNotFoundException, MovieNotFoundException, UserNotFoundException;
     void deleteReview(int reviewId) throws ReviewNotFoundException;
 }

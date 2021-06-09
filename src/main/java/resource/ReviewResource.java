@@ -4,6 +4,7 @@ import exception.MovieNotFoundException;
 import exception.ReviewNotFoundException;
 import exception.UserNotFoundException;
 import model.Review;
+import response.ReviewResponse;
 import service.impl.ReviewOperation;
 
 import javax.ws.rs.*;
@@ -28,7 +29,12 @@ public class ReviewResource {
     @Path("/viewReview")
     @Produces(MediaType.APPLICATION_JSON)
     public Response viewReview(@QueryParam("userId") int userId,@QueryParam("movieId") int movieId) throws UserNotFoundException, ReviewNotFoundException, MovieNotFoundException {
-            return Response.ok(reviewOperation.viewReview(userId, movieId)).build();
+        ReviewResponse reviewResponse = new ReviewResponse();
+        Review review = reviewOperation.viewReview(userId, movieId);
+        reviewResponse.setRating(review.getRating());
+        reviewResponse.setMovieName(review.getMovie().getName());
+        reviewResponse.setUserName(review.getUser().getName());
+        return Response.ok(reviewResponse).build();
     };
 
     @DELETE

@@ -32,7 +32,7 @@ public class ReviewDao implements ReviewDaoInterface {
     }
 
     @Override
-    public int viewReview(int userId, int movieId) throws ReviewNotFoundException, MovieNotFoundException, UserNotFoundException {
+    public Review viewReview(int userId, int movieId) throws ReviewNotFoundException, MovieNotFoundException, UserNotFoundException {
         EntityManager entityManager = entityManagerFactory.createEntityManager();
         entityManager.getTransaction().begin();
         Movie movie = entityManager.find(Movie.class,movieId);
@@ -46,7 +46,7 @@ public class ReviewDao implements ReviewDaoInterface {
         }
         for(Review review : movie.getReviewsSet()){
             if(review.getUser()==user)
-                return review.getRating();
+                return review;
         }
         throw new ReviewNotFoundException();
     }

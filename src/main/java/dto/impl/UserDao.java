@@ -32,7 +32,7 @@ public class UserDao implements UserDaoInterface {
     public List viewUsers(){
         EntityManager entityManager = entityManagerFactory.createEntityManager();
         entityManager.getTransaction().begin();
-        Query query = entityManager.createQuery("select userId,name from User");
+        Query query = entityManager.createQuery("select name from User");
         List users = query.getResultList();
         entityManager.close();
         return users;
@@ -57,9 +57,9 @@ public class UserDao implements UserDaoInterface {
         if(user==null)
             throw new UserNotFoundException();
         else{
-            Map<Integer,Integer> map = new HashMap<Integer, Integer>();
+            Map<String,Integer> map = new HashMap<String, Integer>();
             for (Review review: user.getReviewsSet()){
-                map.put(review.getMovie().getMovieId(), review.getRating());
+                map.put(review.getMovie().getName(), review.getRating());
             }
             if(map.isEmpty()){
                 throw new ReviewNotAddedException();
